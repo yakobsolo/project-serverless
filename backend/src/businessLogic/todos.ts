@@ -59,11 +59,6 @@ export async function updateTodo(
   try {
     logger.info("Updating a todo");
 
-
-    if (updateTodoRequest.name.trim().length == 0) {
-      throw new Error("Name cannot be an empty string");
-    }
-
     return await todosAccess.updateTodo(todoItemId = todoItemId, updateTodoRequest, userId);
   } catch (error) {
     createError(error);
